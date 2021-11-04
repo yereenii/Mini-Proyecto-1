@@ -30,36 +30,7 @@ class Comentarios:
                        self._numero_lineas_codigo += 1
                 elif es_comentario_multiple and linea.endswith(self._tipo_comentario2):
                     es_comentario_multiple = False
-        if self._numero_comentarios_codigo < 1 or self._numero_comentarios_codigo < 1:
+        if self._numero_comentarios_codigo < 1 or self._numero_lineas_codigo < 1:
             return 'Faltan comentarios o Codigo'
         else:
-            return self._numero_comentarios_codigo / self._numero_comentarios_codigo  
-
-'''6dfdf'''
-'''7ddhhh'''
-#8kdkjf7
-'''9ddhhh'''
-
-###
-
-
-''''''
-'''
-
-lkdkljk
-'''
-
-'''11kljdkljfdljd'''
-
-
-'''12
-aa'''
-
-'''13df
-'''
-
-'''14aaa
-aa
-aa'''
-
-
+            return self._numero_comentarios_codigo / self._numero_lineas_codigo  
