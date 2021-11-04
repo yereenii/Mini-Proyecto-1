@@ -4,6 +4,9 @@ from FogCalculator.SyllableCounter import syllables
 from FogCalculator.CompoundWord import split
 
 class WSCount:
+    globalCounting=-1
+    globalWordCount=-1
+    globalSentenceCount=-1
 
     def get_wscount(self, nombre_archivo):
         try:
@@ -14,12 +17,12 @@ class WSCount:
                             "current directory")
             sys.exit(0)
         file_contents = FileObject.read()
-        self.counting(file_contents)
-        self.wordcount(file_contents)
-        self.sentencecount(file_contents)
+        self.globalCounting=self._counting(file_contents)
+        self.globalWordCount=self._wordcount(file_contents)
+        self.globalSentenceCount=self._sentencecount(file_contents)
         FileObject.close()
 
-    def counting(self, file_contents):
+    def _counting(self, file_contents):
         syllablecount = 0
         beg_each_Sentence = re.findall(r"\.\s*(\w+)", file_contents)
         capital_words = re.findall(r"\b[A-Z][a-z]+\b", file_contents)
@@ -36,10 +39,10 @@ class WSCount:
                     syllablecount += 1
         return syllablecount
 
-    def wordcount(self, file_contents):
+    def _wordcount(self, file_contents):
         # Regex to match all words, hyphenated words count as a compound words
         return len(re.findall("[a-zA-Z-]+", file_contents))
 
-    def sentencecount(self, file_contents):
+    def _sentencecount(self, file_contents):
         #regex to count sentences, can end with a period, "?" or "!"
         return (len(re.split("[.!?]+", file_contents))-1)
