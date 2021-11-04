@@ -1,5 +1,6 @@
 from leerArchivo import Comentarios
 from FogCalculator.WSCount import WSCount
+from halstead import Helstead as hd
 
 
 class Main:
@@ -27,5 +28,7 @@ class Main:
     
     print('Fog Index: {}'.format(fog_index_calculated))
     print('Gunning Fog Index: {}'.format(gunning_fog_index))
+
+    hd.ruta(nombre_archivo)
 
     f.close
