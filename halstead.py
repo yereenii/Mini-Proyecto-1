@@ -4,11 +4,8 @@ from math import log2
 class Helstead:
     route=''
     def ruta(ruta):
-        #route=ruta
-        #print('ruta: '+ruta)
-        #print('route: '+route)
-
-        operatorsFileName = "operators"
+       
+        operatorsFileName = "operadores"
         programFileName = ruta
         operators = {}
         operands = {}
@@ -42,14 +39,14 @@ class Helstead:
 
         n1, N1, n2, N2 = 0, 0, 0, 0
 
-        print("OPERATORS:\n")
+        print("OPERADORES:\n")
         for key in operators:
             if(operators[key] > 0):
                 if(key not in ")}]"):
                     n1, N1 = n1 + 1, N1 + operators[key]
                     print("{} = {}".format(key, operators[key]))
 
-        print("\nOPERANDS\n")
+        print("\OPERANDOS\n")
         for key in operands.keys():
             if(operands[key] > 0):
                 n2, N2 = n2 + 1, N2 + operands[key]
@@ -66,6 +63,6 @@ class Helstead:
         unit = {'V': 'bits', 'T': 'seconds'}
         name = {'N':'Halstead Program Length', 'n':'Halstead Vocabulary', 'V':'Program Volume', 'D':'Program Difficulty', 'E': 'Programming Effort', 'L':'Language level', 'I':'Intelligence Content', 'T':'Programming time','N^':'Estimated program length', 'L^':'Estimated language level'}
 
-        print("\nThe various values are: ")
+        print("\n OTROS VALORES DIFERENTES: ")
         for key in val.keys():
             print("{} ({}) = {} {}".format(key,name[key], val[key], unit[key] if key in unit else ''))

@@ -4,7 +4,7 @@ from halstead import Helstead as hd
 
 
 class Main:
-    nombre_archivo = 'D:\IS\AGO-DIC_2021\CalidadDeSoftware\miniproyecto\CodigoEjemplo.java'
+    nombre_archivo = 'D:\CodigoEjemplo.py'
     lineas = []
     with open(nombre_archivo,'r') as f:
         mensaje = f.readlines()
@@ -26,8 +26,8 @@ class Main:
     except ZeroDivisionError:
         fog_index_calculated = gunning_fog_index = 0
     
-    print('Fog Index: {}'.format(fog_index_calculated))
-    print('Gunning Fog Index: {}'.format(gunning_fog_index))
+    print('Indice Fog: {}'.format(fog_index_calculated))
+    print('Indice Gunning Fog: {}'.format(gunning_fog_index))
 
     hd.ruta(nombre_archivo)
 
