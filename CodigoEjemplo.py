@@ -50,16 +50,16 @@ def editar_categoria(request, id):
 
 '''
 #Excepciones controladas
-def editar_categoria(request, id):
-    categoria = get_object_or_404(Categoria, id=id)
-    form = CategoriaForm(instance=categoria)
-    if request.method == 'POST':
-        form = CategoriaForm(request.POST, instance=categoria)
-        if form.is_valid():
-            form.save()
-            return redirect('categoria:lista')
-    context = {'form': form }
-    return render(request, 'editar_categoria.html', context)
+#def editar_categoria(request, id):
+ #   categoria = get_object_or_404(Categoria, id=id)
+  #  form = CategoriaForm(instance=categoria)
+   # if request.method == 'POST':
+    #    form = CategoriaForm(request.POST, instance=categoria)
+     #   if form.is_valid():
+      #      form.save()
+       #     return redirect('categoria:lista')
+    #context = {'form': form }
+    #return render(request, 'editar_categoria.html', context)
 '''
 
 def listavj(request):
